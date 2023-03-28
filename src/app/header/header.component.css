@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    header {
+      @apply bg-white;
+      @apply p-0;
+      @apply border-b border-orange-600 border-solid;
+    }
+
+    a{
+       color: #ef4444;  
+    }
+
+    a:hover{
+        background-color: #ef4444;
+        color: white;
+    }
+
+    nav ul{
+        @apply list-none;
+        @apply m-0;
+    }
+
+    nav ul li a{
+        @apply p-3;
+        @apply inline-block;
+    }
+
+ 
+}
+
+.container {
+    margin: 0 auto;
+    @apply flex;
+    @apply justify-between;
+}
+
+a.logo{
+    @apply font-bold;
+    @apply p-3;
+}
