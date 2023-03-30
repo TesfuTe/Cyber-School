@@ -1,0 +1,44 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found [visible]="!courses || courses.length <= 0" resetLinkText="Reset Search"></app-not-found>
+<ul>
+    <li *ngFor="let course of courses">
+        <a routerLink="/course/{{course.id}}">
+            <img src="{{course.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                   {{course.name}}
+                </div>
+                <span class="favorite {{course.favorite?'':'not'}}">
+                    ❤
+                </span>
+                <div class="stars">
+                    <star-rating
+                    [value]="course.stars"
+                    [totalstars]="5"
+                    checkedcolor="red"
+                    uncheckedcolor="black"
+                    size="20px"
+                    [readonly]="true">
+                </star-rating>
+                </div>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let origin of course.origins">
+                             {{origin}}
+                        </span>
+                    </div>
+                    <div class="cook-time">
+                        <span>🕒</span>
+                        {{course.learningTime}}
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                        {{course.price|currency}}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

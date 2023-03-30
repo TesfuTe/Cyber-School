@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    ul {
+        @apply flex;
+        @apply justify-center;
+        @apply items-center;
+        @apply flex-wrap;
+        @apply list-none;
+        @apply p-0;
+    }
+
+    li a{
+        @apply h-80;
+        @apply w-80;
+        @apply border-b border-white border-solid;
+        @apply rounded-2xl;
+        @apply m-2;
+        @apply flex;
+        @apply flex-col;
+        @apply overflow-hidden;
+        color: #e72929;
+    }
+
+    img{
+      height: 175px;
+    }
+
+    li a:hover{
+        @apply opacity-90;
+        @apply cursor-pointer;
+    }
+
+}
+
+.content{
+    padding: .5rem 1rem;
+    @apply relative;
+}
+
+.favorite{
+    @apply absolute;
+    top: .5rem;
+    right: 1rem;
+    @apply text-xl;
+
+}
+
+.favorite.not{
+    color:grey;
+
+}
+
+.stars{
+    margin-bottom: .2rem;
+}
+
+.product-item-footer{
+    @apply flex;
+    @apply justify-between;
+    @apply items-center;
+}
+
+.orgins{
+    flex: 9;
+}
+
+.orgins span{
+    border-radius: 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: .7rem;
+    color: grey;
+    margin-right: .3rem;
+}
+
+.cook-time{
+    font-size: .8rem;
+    flex: 3;
+    text-align: right;
+}
+
+.price{
+    color: #414141;
+    margin-top: .7rem;
+}

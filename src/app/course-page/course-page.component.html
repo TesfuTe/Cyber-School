@@ -1,0 +1,50 @@
+<app-not-found [visible]="!course" notFoundMessage="Course Not Found!"
+resetLinkText="Back To Homepage"></app-not-found>
+
+<div *ngIf="course" class="container">
+  <img [src]="course.imageUrl" [alt]="course.name" />
+
+  <div class="details">
+      <div class="header">
+          <span class="name">
+              {{course.name}}
+          </span>
+          <span class="favorite {{course.favorite?'':'not'}}">
+              ❤
+          </span>
+      </div>
+      <div class="rating">
+          <star-rating
+          [value]="course.stars"
+          [totalstars]="5"
+          checkedcolor="red"
+          uncheckedcolor="black"
+          size="30px"
+          [readonly]="true">
+          </star-rating>
+      </div>
+
+      <div class="origins">
+          <span *ngFor="let origin of course.origins">
+              {{origin}}
+          </span>
+      </div>
+
+      <div class="tags">
+          <app-tags [coursePageTags]="course.tags" justifyContent="start"></app-tags>
+      </div>
+
+      <div class="learning-time">
+          <span>
+              Time to lean about <strong>{{course.learningTime}}</strong> weeks
+          </span>
+      </div>
+
+      <div class="price">
+          <span>{{course.price|currency}}</span>
+      </div>
+
+      <button (click)="addToCart()">Add To Cart</button>
+  </div>
+
+  </div>

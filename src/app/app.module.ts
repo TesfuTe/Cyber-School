@@ -1,16 +1,37 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { RatingModule } from 'ng-starrating';
+import {FormsModule} from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { TagsComponent } from './tags/tags.component';
+import { CoursePageComponent } from './course-page/course-page.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    SearchComponent,
+    TagsComponent,
+    CoursePageComponent,
+    CartPageComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RatingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
