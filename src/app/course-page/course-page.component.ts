@@ -20,7 +20,6 @@ export class CoursePageComponent implements OnInit {
       if(params.id)
       this.course = courseService.getCourseById(params.id);
     })
-
   }
 
   ngOnInit(): void {

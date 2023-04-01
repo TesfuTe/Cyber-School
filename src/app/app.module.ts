@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RatingModule } from 'ng-starrating';
 import {FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RatingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -26,12 +34,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CoursePageComponent,
     CartPageComponent,
     NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RatingModule,
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
